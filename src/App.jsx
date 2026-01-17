@@ -243,6 +243,9 @@ function App() {
         <div className="feature-container">
           {/* Left Sidebar - Fixed */}
           <div className="feature-sidebar">
+            <div className="sidebar-logo-container">
+              <img src="/mood.png" alt="Mood" className="sidebar-logo" />
+            </div>
             <h3 className="sidebar-title">Features</h3>
             <div className="sidebar-nav">
               {features.map((feature, index) => {
