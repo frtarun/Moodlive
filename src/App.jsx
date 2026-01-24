@@ -19,9 +19,25 @@ import {
   Star,
   Shield
 } from 'lucide-react'
+import { Routes, Route, Link, useLocation } from 'react-router-dom'
 import './App.css'
+import Privacy from '../legalss/privacy'
+import Terms from '../legalss/terms'
+import Support from '../legalss/support'
 
 function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/terms" element={<Terms />} />
+      <Route path="/support" element={<Support />} />
+    </Routes>
+  )
+}
+
+
+function LandingPage() {
   const containerRef = useRef(null)
   const heroRef = useRef(null)
   const featureSectionRef = useRef(null)
@@ -290,10 +306,11 @@ function App() {
           <div className="footer-links">
             <h4>Legal</h4>
             <ul>
-              <li><a href="#">Privacy</a></li>
-              <li><a href="#">Terms</a></li>
-              <li><a href="#">Support</a></li>
+              <li><Link to="/privacy">Privacy</Link></li>
+              <li><Link to="/terms">Terms</Link></li>
+              <li><Link to="/support">Support</Link></li>
             </ul>
+
           </div>
 
           <div className="footer-download">
@@ -370,3 +387,4 @@ const FeaturePanel = ({ feature }) => {
 }
 
 export default App
+
